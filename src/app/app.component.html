@@ -31,9 +31,9 @@
               id="email"
               class="form-control"
               formControlName="email">
-              <span class="help-block"
-                *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched">
-                Please enter a valid email address
+            <span class="help-block"
+              *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched">
+              Invalid email  
             </span>
           </div>
         </div>
@@ -47,7 +47,7 @@
         </div>
         <div formArrayName="hobbies">
           <h4>Your Hobbies</h4>
-          <button class="btn btn-default" type="button" (click)="onAddHobby()">Add Hobby</button>
+          <button class="btn btn-default addHobbyBtn" type="button" (click)="onAddHobby()">Add Hobby</button>
           <div class="form-group" *ngFor="let hobbyControl of signupForm.get('hobbies').controls; let i = index">
             <input type="text" class="form-control" [formControlName]="i">
           </div>
